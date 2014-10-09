@@ -999,4 +999,5 @@ NameVirtualHost *:80
 
 <VirtualHost *:80>
     DocumentRoot /vagrant/
+    AllowOverride All
 </VirtualHost>
