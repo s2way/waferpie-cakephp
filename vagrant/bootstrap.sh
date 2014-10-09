@@ -2,6 +2,7 @@
 sudo su -
 yum install httpd -y
 yum install php -y
+yum install git -y
 
 mv /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf-dist
 cp /vagrant/vagrant/httpd.conf.default /etc/httpd/conf/httpd.conf
@@ -18,3 +19,8 @@ mkdir /vagrant/app/tmp/cache/models
 mkdir /vagrant/app/tmp/cache/persistent
 mkdir /vagrant/app/tmp/logs
 chmod -R 777 /vagrant/app/tmp
+
+rm -rf /vagrant/app/Model/Datasource/Waferpie.php
+rm -rf /home/vagrant/waferpie-cakephp-datasource/
+git clone https://github.com/s2way/waferpie-cakephp-datasource.git
+cp /home/vagrant/waferpie-cakephp-datasource/Waferpie.php /vagrant/app/Model/Datasource/Waferpie.php
